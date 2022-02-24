@@ -7,9 +7,3 @@ test('tests', () => {
     .toMatch("N ffns bt,\nYr wrtng s mng th wrst 'v vr rd")
 })
 
-// describe("Basic tests", () => {
-
-//   it("Testing for fixed tests", () => {
-//     assert.strictEqual(disemvowel("What are you, a communist?"), "Wht r y,  cmmnst?")
-//     })
-//   })
