@@ -1,4 +1,4 @@
-const anagrams = require('./where_my_anagrams_at');
+const anagrams = require('./index');
 
 test('tests', () => {
   let actual = anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']);

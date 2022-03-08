@@ -1,4 +1,4 @@
-const disemvowel = require('./disemvowel_trolls');
+const disemvowel = require('./index');
 
 test('tests', () => {
   expect(disemvowel("This website is for losers LOL!")).toMatch("Ths wbst s fr lsrs LL!")
