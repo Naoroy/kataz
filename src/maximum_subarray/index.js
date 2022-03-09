@@ -2,17 +2,14 @@ module.exports = function maxSubArray(nums) {
   let max;
   let ln = nums.length;
 
-  if (ln < 2) return nums[0];
-
   for (let i = 0; i < ln; i++) {
-    for (let j = i+1; j < ln; j++) {
-      let subarray = nums.slice(i,j);
-      let sum = subarray.reduce((a, b) => a + b);
+    let sum = 0;
+    for (let j = i; j < ln; j++) {
+      sum += nums[j]
       max = sum < max ? max : sum;
-      console.log(sum, max)
     }
   }
 
-  return max || 0;
+  return max;
 };
 
