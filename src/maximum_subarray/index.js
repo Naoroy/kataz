@@ -1,4 +1,8 @@
-module.exports = function maxSubArray(nums) {
+module.exports = { maxSubArray, _maxSubArray }
+
+
+/* brute force */
+function maxSubArray(nums) {
   let max;
   let ln = nums.length;
 
@@ -13,3 +17,20 @@ module.exports = function maxSubArray(nums) {
   return max;
 };
 
+/* hash table */
+function _maxSubArray(nums) {
+  let tmpSum = 0
+  let sum
+
+  for (let i = 0; i < nums.length; i++) {
+    tmpSum = nums[i] > nums[i] + tmpSum
+      ? nums[i]
+      : nums[i] + tmpSum
+
+    sum = sum > tmpSum
+      ? sum
+      : tmpSum
+  }
+
+  return sum
+}
