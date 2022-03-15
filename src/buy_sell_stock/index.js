@@ -1,4 +1,4 @@
-var maxProfit = function(prices) {
+function maxProfit(prices) {
   let max = 0
   let min = 0
   let diff = 0
@@ -13,6 +13,22 @@ var maxProfit = function(prices) {
   }
 
   return diff 
-};
+}
 
-module.exports = maxProfit
+function _maxProfit(prices) {
+  let maxProfit = 0
+  let min
+
+  for (let i = 0; i < prices.length; i++) {
+    let profit = prices[i] - min 
+    min = prices[i] > min
+      ? min : prices[i]
+
+    maxProfit =profit  > maxProfit
+      ? profit : maxProfit
+  }
+
+  return maxProfit
+}
+
+module.exports = { maxProfit, _maxProfit }
