@@ -11,6 +11,7 @@ function func(list) {
     node = node.next
   }
 
+
   values = values.reverse()
   newlist = new ListNode()
   current = newlist

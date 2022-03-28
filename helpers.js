@@ -1,25 +1,3 @@
-class LinkedList {
-  list
-  array
-
-  constructor(array) {
-    if (array.length < 1) {
-      throw new Error('can\'t initialize empty list, provide array of numbers')
-    }
-
-    this.array = array
-    this.list = new ListNode(array[0])
-    let i = 1
-    let node = this.list
-
-    while (i < array.length) {
-      node.next = new ListNode(array[i])
-      node = node.next
-      i++
-    }
-  }
-}
-
 class ListNode {
   val
   next
@@ -29,5 +7,28 @@ class ListNode {
     this.next = next
   }
 }
+
+class LinkedList extends ListNode {
+  val = 0
+  next = undefined
+
+  constructor(array) {
+    super()
+    if (array.length < 1) {
+      throw new Error('can\'t initialize empty list, provide an array with a least one element')
+    }
+
+    this.val = array[0]
+    let i = 1
+    let node = this
+
+    while (i < array.length) {
+      node.next = new ListNode(array[i])
+      node = node.next
+      i++
+    }
+  }
+}
+
 
 module.exports = { LinkedList, ListNode }

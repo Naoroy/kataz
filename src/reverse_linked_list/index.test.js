@@ -7,6 +7,6 @@ test('Func exists', function() {
   let list1 = new LinkedList(arr1)
   let list2 = new LinkedList(arr1.reverse())
 
-  expect(func(list1.list)).toEqual(list2.list)
+  expect(func(list1)).toEqual(list2)
 
 })
