@@ -30,5 +30,24 @@ class LinkedList extends ListNode {
   }
 }
 
+class TreeNode {
+  val = 0
+  left
+  right
 
-module.exports = { LinkedList, ListNode }
+  constructor(
+    val = 0,
+    left = null,
+    right = null
+  ) {
+    this.val = val
+    this.left = left
+    this.right = right
+  }
+}
+
+module.exports = {
+  LinkedList,
+  ListNode,
+  TreeNode,
+}
