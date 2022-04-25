@@ -1,11 +1,11 @@
-function func(nums) {
+function mergeSortReverse(nums) {
   if (nums.length == 1) { return nums }
 
   const mid = Math.floor(nums.length / 2)
   const left = nums.slice(0, mid)
   const right = nums.slice(mid)
 
-  return mergeSortedArrays(func(left), func(right))
+  return mergeSortedArrays(mergeSortReverse(left), mergeSortReverse(right))
 }
 
 function mergeSortedArrays(a, b) {
@@ -15,11 +15,11 @@ function mergeSortedArrays(a, b) {
 
   while (ai < a.length && bi < b.length) {
     if (a[ai] <= b[bi]) {
-      result.push(a[ai])
-      ai++
-    } else {
       result.push(b[bi])
       bi++
+    } else {
+      result.push(a[ai])
+      ai++
     }
   }
 
@@ -36,23 +36,22 @@ function mergeSortedArrays(a, b) {
   return result
 }
 
-function insertionSort(nums) {
-  let i = 1
-  let j
-  let tmp
+function insertionSortReverse(n) {
+  let i, j, key
+  i = 1
 
-  while (i < nums.length) {
+  while (i < n.length) {
     j = i - 1
-    tmp = nums[i]
-    while (nums[j] > tmp && j >= 0) {
-      nums[j+1] = nums[j]
+    key = n[i]
+    while (j >= 0 && n[j] < key) {
+      n[j+1] = n[j]
       j--
     }
-    nums[j+1] = tmp
+    n[j+1] = key
     i++
   }
 
-  return nums
+  return n
 }
 
-module.exports = { mergeSort: func, insertionSort }
+module.exports = { mergeSortReverse, insertionSortReverse }
