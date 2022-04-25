@@ -1,5 +1,7 @@
-const func = require('./index')
+const { func } = require('./index')
 
-test('Func exists', function() {
-  expect(func).toBeTruthy()
+describe('Function', function() {
+  test('Function exists', function() {
+    expect(func).toBeTruthy()
+  })
 })
