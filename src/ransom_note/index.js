@@ -4,7 +4,6 @@ function func(ransomNote, magazine) {
     let char = table[magazine[i]]
     table[magazine[i]] = char ? char+1 : 1
   }
-  console.log(table)
   for (let i = 0; i < ransomNote.length; i++) {
     let char = ransomNote[i]
     if (!table[char] || table[char] < 1) return false
