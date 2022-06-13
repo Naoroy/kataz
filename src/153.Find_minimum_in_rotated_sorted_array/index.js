@@ -1,10 +1,12 @@
 function func(nums) {
-  let min;
-  for (let n of nums) {
-    if (n > min) continue;
-    min = n
+  if (nums.length > 1) {
+    let half = Math.round(nums.length / 2);
+    let left = func(nums.slice(0, half));
+    let right = func(nums.slice(half));
+
+    return left < right ? left : right;
   }
-  return min;
+  return nums[0]
 }
 
 module.exports = func
