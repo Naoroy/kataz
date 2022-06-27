@@ -1,3 +1,21 @@
+function binarySearch(nums, target) {
+  let l  = 0
+  let r = nums.length - 1 
+
+  while (l <= r) {
+    m = Math.floor((l + r) / 2)
+
+    if (nums[m] > target) 
+      r = m - 1
+    else if (nums[m] < target) 
+      l = m + 1
+    else 
+      return m
+  }
+
+  return -1
+}
+
 function func(nums, target) {
   const map = {}
 
@@ -8,7 +26,7 @@ function func(nums, target) {
   return map[target]
 }
 
-function divideAndConquer(nums, target) {
+function divideJustOnce(nums, target) {
   const half = Math.floor(nums.length / 2)
   let cut
   let map = {}
@@ -29,4 +47,4 @@ function divideAndConquer(nums, target) {
     : map[target] + half
 }
 
-module.exports = { func, divideAndConquer }
+module.exports = { func, divideJustOnce, binarySearch }
